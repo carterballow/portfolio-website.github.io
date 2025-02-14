@@ -1,22 +1,23 @@
 .portfolio__container {
     position: relative;
-    overflow: hidden;
+    overflow: hidden; /* Important for hiding overflowing slides */
 }
 
 .portfolio__wrapper {
     display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 100%;
+    transition: transform 0.5s ease-in-out; /* Smooth transitions */
+    /* Calculate width based on number of slides */
+    width: calc(100% * 2); /* 2 because you have 2 slides, change this if you have more */
 }
 
 .slide {
     min-width: 100%;
-    display: none;
     flex-shrink: 0;
 }
 
-.slide.active {
-    display: flex;
+/* Remove the active class toggle, we'll use transform */
+.slide {
+    display: flex; /* Always display flex, but only one will be in view */
 }
 
 .arrow {
@@ -28,6 +29,7 @@
     padding: 10px;
     cursor: pointer;
     border-radius: 50%;
+    z-index: 10; /* Ensure arrows are above the slides */
 }
 
 .arrow--next {
@@ -45,6 +47,7 @@
     display: flex;
     justify-content: center;
     gap: 5px;
+    z-index: 10; /* Ensure pagination is above the slides */
 }
 
 .pagination span {
