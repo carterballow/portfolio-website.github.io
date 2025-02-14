@@ -20,10 +20,6 @@
   z-index: 1;
 }
 
-.swiper-container-vertical > .swiper-wrapper {
-  flex-direction: column;
-}
-
 .swiper-wrapper {
   position: relative;
   width: 100%;
@@ -34,33 +30,6 @@
   box-sizing: content-box;
 }
 
-.swiper-container-android .swiper-slide,
-.swiper-wrapper {
-  transform: translate3d(0px, 0, 0);
-}
-
-.swiper-container-multirow > .swiper-wrapper {
-  flex-wrap: wrap;
-}
-
-.swiper-container-multirow-column > .swiper-wrapper {
-  flex-wrap: wrap;
-  flex-direction: column;
-}
-
-.swiper-container-free-mode > .swiper-wrapper {
-  transition-timing-function: ease-out;
-  margin: 0 auto;
-}
-
-.swiper-container-pointer-events {
-  touch-action: pan-y;
-}
-
-.swiper-container-pointer-events.swiper-container-vertical {
-  touch-action: pan-x;
-}
-
 .swiper-slide {
   flex-shrink: 0;
   width: 100%;
@@ -68,26 +37,3 @@
   position: relative;
   transition-property: transform;
 }
-
-.swiper-slide-invisible-blank {
-  visibility: hidden;
-}
-
-.swiper-container-autoheight,
-.swiper-container-autoheight .swiper-slide {
-  height: auto;
-}
-
-.swiper-container-autoheight .swiper-wrapper {
-  align-items: flex-start;
-  transition-property: transform, height;
-}
-
-.swiper-container-3d {
-  perspective: 1200px;
-}
-
-.swiper-container-3d .swiper-cube-shadow,
-.swiper-container-3d .swiper-slide,
-.swiper-container-3d .swiper-slide-shadow-bottom,
-.swiper-container-3d .
