@@ -164,6 +164,105 @@ function moveSlide(step) {
     fill: #333;
 }
 </style>
+    <style>
+body {
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  min-height: 100vh; /* Ensure full viewport height */
+  margin: 0; /* Remove default margins */
+}
+
+body.dark-mode {
+  background-color: #1e1e1e; /* Dark background */
+  color: #f0f0f0; /* Light text color */
+}
+
+.container {
+    text-align: center; /* Center the button */
+}
+
+.theme-button {
+  background-color: transparent; /* Transparent background */
+  border: none; /* Remove default border */
+  color: inherit; /* Inherit text color from body */
+  padding: 10px 20px;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+  outline: none; /* Remove focus outline */
+}
+
+.theme-button:hover {
+  background-color: rgba(0, 0, 0, 0.2); /* Slightly darker background on hover (dark mode) */
+}
+
+body.dark-mode .theme-button:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Slightly lighter background on hover (light mode) */
+}
+
+/* Optional: Add a sun/moon icon */
+.theme-button::before {
+  content: '\263E'; /* Unicode for sun */
+  margin-right: 5px;
+  transition: transform 0.3s ease; /* Smooth rotation */
+}
+
+body.dark-mode .theme-button::before {
+  content: '\1F319'; /* Unicode for moon */
+}
+
+.theme-button.switched::before {
+  transform: rotate(180deg); /* Rotate icon on switch */
+}
+
+/* Example content styling (adjust as needed) */
+h1 {
+  margin-bottom: 20px;
+}
+
+p {
+    line-height: 1.6;
+    max-width: 600px; /* Limit the paragraph width for readability */
+}
+
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Theme Switcher Example</h1>
+        <p>This is some example text to demonstrate the theme change. You can easily switch between light and dark mode by clicking the button below.</p>
+        <button class="theme-button" onclick="toggleTheme()">Switch Theme</button>
+    </div>
+
+<script>
+function toggleTheme() {
+  const body = document.body;
+  const button = document.querySelector('.theme-button');
+
+  body.classList.toggle('dark-mode');
+  button.classList.toggle('switched'); // For icon rotation
+
+  // Store the theme preference in localStorage
+  if (body.classList.contains('dark-mode')) {
+    localStorage.setItem('theme', 'dark');
+  } else {
+    localStorage.setItem('theme', 'light');
+  }
+}
+
+// Check for stored theme preference on page load
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+  document.body.classList.add('dark-mode');
+}
+
+</script>
 
     
   </head>
@@ -207,11 +306,6 @@ function moveSlide(step) {
                <i class="uil uil-times nav__close" id="nav-close"></i>
             </div>
             <div class="nav__btns">
-               <!-- Theme change button -->
-               <i class="uil uil-moon change-theme" id="theme-button"></i>
-               <div class="nav__toggle" id="nav-toggle">
-                  <i class="uil uil-apps"></i>
-               </div>
             </div>
          </nav>
       </header>
