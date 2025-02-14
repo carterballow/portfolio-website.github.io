@@ -40,12 +40,6 @@
   transition-property: transform;
 }
 
-/* Hide pagination and scrollbar */
-.swiper-pagination,
-.swiper-scrollbar {
-  display: none;
-}
-
 /* Style navigation buttons (customize as needed) */
 .swiper-button-next,
 .swiper-button-prev {
