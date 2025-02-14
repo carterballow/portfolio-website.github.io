@@ -102,7 +102,7 @@ var swiper = new Swiper(".portfolio__container", {
 });
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
-const sections = document.querySelectorAll("section[id]");
+/*const sections = document.querySelectorAll("section[id]");
 
 function scrollActive() {
   const scrollY = window.pageYOffset;
@@ -123,7 +123,7 @@ function scrollActive() {
     }
   });
 }
-window.addEventListener("scroll", scrollActive);
+window.addEventListener("scroll", scrollActive); */
 
 /*==================== CHANGE BACKGROUND HEADER ====================*/
 function scrollHeader() {
