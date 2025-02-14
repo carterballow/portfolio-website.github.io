@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextArrow = document.querySelector(".arrow--next");
     const prevArrow = document.querySelector(".arrow--prev");
     const pagination = document.querySelector(".pagination");
+    const wrapper = document.querySelector(".portfolio__wrapper"); // Get the wrapper
 
     let currentSlideIndex = 0;
 
@@ -16,9 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const updateSlides = () => {
-        slides.forEach((slide, index) => {
-            slide.classList.toggle("active", index === currentSlideIndex);
-        });
+        const translateXValue = -currentSlideIndex * 100; // Calculate translation
+        wrapper.style.transform = `translateX(${translateXValue}%)`; // Apply transform
 
         const dots = pagination.querySelectorAll(".dot");
         dots.forEach((dot, index) => {
@@ -37,14 +37,12 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const prevSlide = () => {
-        currentSlideIndex =
-            (currentSlideIndex - 1 + slides.length) % slides.length;
+        currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
         updateSlides();
     };
 
     nextArrow.addEventListener("click", nextSlide);
     prevArrow.addEventListener("click", prevSlide);
 
-    // Initial update
-    updateSlides();
+    updateSlides(); // Initial update
 });
