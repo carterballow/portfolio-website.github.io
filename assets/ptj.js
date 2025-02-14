@@ -123,7 +123,7 @@ function scrollActive() {
     }
   });
 }
-window.addEventListener("scroll", scrollActive); 
+scrollActive(); 
 
 /*==================== CHANGE BACKGROUND HEADER ====================*/
 function scrollHeader() {
