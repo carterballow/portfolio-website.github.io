@@ -5,13 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>carterballow.com</title>
-       <link rel="stylesheet" href="assets/swiper-bundle.min.css" />
-     
-    <link rel="stylesheet" href="assets/newcss.css" />
-    <link
-      rel="stylesheet"
-      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
-    />
+      <!-- Both have these links -->
+<link rel="stylesheet" href="assets/swiper-bundle.min.css" />
+<link rel="stylesheet" href="assets/newcss.css" />
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+      </head>
     <script>
 let index = 0;
 function moveSlide(step) {
@@ -25,6 +23,7 @@ function moveSlide(step) {
     const newTransform = -index * 100;
     document.querySelector('.carousel-container').style.transform = `translateX(${newTransform}%)`;
 }
+      
        </script>
 <style>
 .projects-header {
@@ -164,7 +163,7 @@ function moveSlide(step) {
     fill: #333;
 }
 </style>
-  </head>
+
    <body oncontextmenu="return false">
       <header class="header" id="header">
          <nav class="nav container">
