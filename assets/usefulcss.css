@@ -1,0 +1,60 @@
+.portfolio__container {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio__wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    display: none;
+    flex-shrink: 0;
+}
+
+.slide.active {
+    display: flex;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.arrow--next {
+    right: 10px;
+}
+
+.arrow--prev {
+    left: 10px;
+}
+
+.pagination {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.pagination span {
+    width: 10px;
+    height: 10px;
+    background: gray;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.pagination span.active {
+    background: black;
+}
