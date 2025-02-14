@@ -13,7 +13,6 @@
 }
 
 .swiper-container {
-  touch-action: none;
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -33,7 +32,8 @@
   box-sizing: content-box;
 }
 
-.swiper-slide {
+.swiper-slide .scrollable-element {
+  touch-action: none;
   flex-shrink: 0;
   width: 100%;
   height: 100%;
