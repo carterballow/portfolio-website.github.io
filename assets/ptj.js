@@ -87,16 +87,17 @@ modalCloses.forEach((modalClose) => {
 
 /*======================= Portfolio Swiper ===================*/
 var swiper = new Swiper(".portfolio__container", {
+  enabled: false,  // This disables all swiper functionality
   cssMode: true,
-  loop: true,
-
+  loop: false,
+  allowTouchMove: false,  // Prevents touch/drag interactions
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
   pagination: {
     el: ".swiper-pagination",
-    clickable: true,
+    clickable: false,
   },
 });
 
