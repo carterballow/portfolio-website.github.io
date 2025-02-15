@@ -253,6 +253,19 @@ function moveSlide(step) {
             <svg viewBox="0 0 24 24"><path d="M9.37 2.97c.49.11.67.71.31 1.05A8.003 8.003 0 0 0 11.99 20c3.87 0 7.15-2.75 7.88-6.49.08-.43.61-.6.94-.3A9.006 9.006 0 1 1 9.06 2.67c.12-.02.24-.02.31.01z"/></svg>
             </div>
             </div>
+              <script>
+        const sunButton = document.getElementById("sun");
+        const moonButton = document.getElementById("moon");
+        const body = document.body;
+
+        sunButton.addEventListener("click", () => {
+            body.classList.remove("dark-mode");
+        });
+
+        moonButton.addEventListener("click", () => {
+            body.classList.add("dark-mode");
+        });
+    </script>
 
           <div class="nav__toggle" id="nav-toggle">
             <i class="uil uil-apps"></i>
