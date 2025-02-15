@@ -23,7 +23,81 @@ function moveSlide(step) {
     const newTransform = -index * 100;
     document.querySelector('.carousel-container').style.transform = `translateX(${newTransform}%)`;
 }
-      
+    <style>
+        body {
+            font-family: sans-serif;
+            transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+        }
+
+        body.light-mode {
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        body.dark-mode {
+            background-color: #333;
+            color: #f8f8f8;
+        }
+
+        .toggle-container {
+            position: fixed; /* Fixed to the bottom right */
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+            border-radius: 50%; /* Rounded shape */
+            padding: 10px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+            transition: background-color 0.3s; /* Smooth transition for background */
+        }
+
+        .toggle-container:hover {
+          background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .toggle-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Styles for the content (example) */
+        .content {
+            padding: 20px;
+        }
+
+        /* Example styles for a larger icon (if needed) */
+        .large-icon {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body class="light-mode">  <div class="content">
+      <h1>Light/Dark Mode Example</h1>
+      <p>This is some example content.  You can replace this with your actual website content.</p>
+      <p>More content here...</p>
+    </div>
+
+
+    <div class="toggle-container" onclick="toggleMode()">
+        <img id="mode-icon" class="toggle-icon" src="sun.png" alt="Light Mode">  </div>
+
+    <script>
+        function toggleMode() {
+            const body = document.body;
+            const icon = document.getElementById('mode-icon');
+
+            body.classList.toggle('dark-mode');  // Toggle the class
+
+            if (body.classList.contains('dark-mode')) {
+                icon.src = "moon.png"; // Change to moon icon
+                icon.alt = "Dark Mode";
+            } else {
+                icon.src = "sun.png"; // Change to sun icon
+                icon.alt = "Light Mode";
+            }
+        }
+    </script>  
        </script>
 <style>
 .projects-header {
