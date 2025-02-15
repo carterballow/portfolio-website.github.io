@@ -4,165 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>carterballow.com</title>
-      <!-- Both have these links -->
-<link rel="stylesheet" href="assets/swiper-bundle.min.css" />
-<link rel="stylesheet" href="assets/newcss.css" />
-<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
-      </head>
-    <script>
-let index = 0;
-function moveSlide(step) {
-    const slides = document.querySelectorAll('.project-card');
-    index += step;
-    if (index < 0) {
-        index = slides.length - 1;
-    } else if (index >= slides.length) {
-        index = 0;
-    }
-    const newTransform = -index * 100;
-    document.querySelector('.carousel-container').style.transform = `translateX(${newTransform}%)`;
-}
-       </script>
-<style>
-.projects-header {
-    margin-top: 40px; /* Adjust the space above the header */
-}
-  .projects-subheader {
-  margin-bottom: -10px;
-}
-.carousel {
-    position: relative;
-    width: 90%;
-    max-width: 1200px;
-     margin: -25px auto;
-    overflow: hidden;
-    padding: 1rem 0;
-}
+    <title>carterballow.com</title>
+    <link rel="stylesheet" href="assets/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/newcss.css" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+  </head>
 
-.carousel-container {
-    display: flex;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    margin-bottom: -5px; /* Reduced space after the carousel */
-    margin-top: -45px;
-}
 
-.project-card {
-    min-width: 100%;
-    padding: 2rem;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.card-content {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 800px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-}
-
-.card-content:hover {
-    transform: translateY(-5px);
-}
-
-.project-image {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-}
-
-.project-info {
-    padding: 1.5rem;
-}
-
-.project-title {
-    font-size: 1.5rem;
-    color: #333;
-    margin: 0 0 1rem 0;
-}
-
-.project-description {
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-}
-
-.button-container {
-    display: flex;
-    gap: 1rem;
-}
-
-.project-button {
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 6px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.primary-button {
-    background-color: var(--first-color);
-    color: white;
-}
-
-.primary-button:hover {
-    background-color: var(--first-color-alt);
-}
-
-.secondary-button {
-    background-color: transparent;
-    color: var(--first-color);
-    border: 2px solid var(--first-color);
-}
-
-.secondary-button:hover {
-    background-color: rgba(119, 73, 248, 0.1);
-}
-
-.carousel-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background-color: white;
-    border: none;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-
-.carousel-nav:hover {
-    background-color: #f5f5f5;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.prev {
-    left: 1rem;
-}
-
-.next {
-    right: 1rem;
-}
-
-.nav-icon {
-    width: 24px;
-    height: 24px;
-    fill: #333;
-}
-</style>
-
+  
    <body oncontextmenu="return false">
       <header class="header" id="header">
          <nav class="nav container">
@@ -204,6 +56,8 @@ function moveSlide(step) {
             </div>
             <div class="nav__btns">
               <!-- Theme change button -->
+               <i class="uil uil-moon change-theme" id="theme-button"></i>
+              
           <div class="nav__toggle" id="nav-toggle">
             <i class="uil uil-apps"></i>
           </div>
@@ -1016,76 +870,4 @@ function moveSlide(step) {
     <script src="https://kit.fontawesome.com/2205d59d52.js" crossorigin="anonymous"></script>
     <script src="assets/ptj.js"></script>
   </body>
-  <style>
-        .dark-mode {
-            background-color: #222;
-            color: #fff;
-        }
-
-        .fixed-icons {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            gap: 10px;
-        }
-
-        .icon {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: transform 0.2s ease, background-color 0.3s ease;
-        }
-
-        .icon:hover {
-            transform: scale(1.1);
-        }
-
-        .sun {
-            background-color: #ffcc00;
-            box-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
-        }
-
-        .moon {
-            background-color: #555;
-            box-shadow: 0 0 10px rgba(85, 85, 85, 0.8);
-        }
-
-        .icon svg {
-            width: 24px;
-            height: 24px;
-            fill: white;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="fixed-icons">
-        <div class="icon sun" id="sun">
-            <svg viewBox="0 0 24 24"><path d="M12 4.5c-.41 0-.75-.34-.75-.75V1.5c0-.41.34-.75.75-.75s.75.34.75.75v2.25c0 .41-.34.75-.75.75zm0 16.5c-.41 0-.75.34-.75.75v2.25c0 .41.34.75.75.75s.75-.34.75-.75V21.75c0-.41-.34-.75-.75-.75zM4.5 12c0-.41-.34-.75-.75-.75H1.5c-.41 0-.75.34-.75.75s.34.75.75.75h2.25c.41 0 .75-.34.75-.75zm16.5 0c0-.41.34-.75.75-.75h2.25c.41 0 .75.34.75.75s-.34.75-.75.75H21.75c-.41 0-.75-.34-.75-.75zM6.22 6.22c-.29-.29-.29-.77 0-1.06l1.59-1.59c.29-.29.77-.29 1.06 0s.29.77 0 1.06L7.28 6.22c-.3.3-.77.3-1.06 0zm12.12 12.12c-.29-.29-.29-.77 0-1.06l1.59-1.59c.29-.29.77-.29 1.06 0s.29.77 0 1.06l-1.59 1.59c-.3.3-.77.3-1.06 0zM6.22 17.78c.29-.29.77-.29 1.06 0l1.59 1.59c.29.29.29.77 0 1.06s-.77.29-1.06 0l-1.59-1.59c-.29-.3-.29-.77 0-1.06zm12.12-12.12c.29-.29.77-.29 1.06 0l1.59 1.59c.29.29.29.77 0 1.06s-.77.29-1.06 0l-1.59-1.59c-.3-.3-.3-.77 0-1.06zM12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z"/></svg>
-        </div>
-        <div class="icon moon" id="moon">
-            <svg viewBox="0 0 24 24"><path d="M9.37 2.97c.49.11.67.71.31 1.05A8.003 8.003 0 0 0 11.99 20c3.87 0 7.15-2.75 7.88-6.49.08-.43.61-.6.94-.3A9.006 9.006 0 1 1 9.06 2.67c.12-.02.24-.02.31.01z"/></svg>
-        </div>
-    </div>
-
-    <script>
-        const sunButton = document.getElementById("sun");
-        const moonButton = document.getElementById("moon");
-        const body = document.body;
-
-        sunButton.addEventListener("click", () => {
-            body.classList.remove("dark-mode");
-        });
-
-        moonButton.addEventListener("click", () => {
-            body.classList.add("dark-mode");
-        });
-    </script>
-
-</body>
 </html>
