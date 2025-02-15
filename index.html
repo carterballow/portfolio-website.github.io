@@ -9,6 +9,54 @@
 <link rel="stylesheet" href="assets/swiper-bundle.min.css" />
 <link rel="stylesheet" href="assets/newcss.css" />
 <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 200vh; /* Just to show the fixed effect when scrolling */
+            background-color: #f4f4f4;
+        }
+
+        .fixed-icons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+        }
+
+        .icon:hover {
+            transform: scale(1.1);
+        }
+
+        .sun {
+            background-color: #ffcc00;
+            box-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
+        }
+
+        .moon {
+            background-color: #555;
+            box-shadow: 0 0 10px rgba(85, 85, 85, 0.8);
+        }
+
+        .icon svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+    </style>
       </head>
     <script>
 let index = 0;
@@ -23,81 +71,6 @@ function moveSlide(step) {
     const newTransform = -index * 100;
     document.querySelector('.carousel-container').style.transform = `translateX(${newTransform}%)`;
 }
-    <style>
-        body {
-            font-family: sans-serif;
-            transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
-        }
-
-        body.light-mode {
-            background-color: #f8f8f8;
-            color: #333;
-        }
-
-        body.dark-mode {
-            background-color: #333;
-            color: #f8f8f8;
-        }
-
-        .toggle-container {
-            position: fixed; /* Fixed to the bottom right */
-            bottom: 20px;
-            right: 20px;
-            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
-            border-radius: 50%; /* Rounded shape */
-            padding: 10px;
-            cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-            transition: background-color 0.3s; /* Smooth transition for background */
-        }
-
-        .toggle-container:hover {
-          background-color: rgba(255, 255, 255, 0.9);
-        }
-
-        .toggle-icon {
-            width: 20px;
-            height: 20px;
-        }
-
-        /* Styles for the content (example) */
-        .content {
-            padding: 20px;
-        }
-
-        /* Example styles for a larger icon (if needed) */
-        .large-icon {
-            width: 30px;
-            height: 30px;
-        }
-    </style>
-</head>
-<body class="light-mode">  <div class="content">
-      <h1>Light/Dark Mode Example</h1>
-      <p>This is some example content.  You can replace this with your actual website content.</p>
-      <p>More content here...</p>
-    </div>
-
-
-    <div class="toggle-container" onclick="toggleMode()">
-        <img id="mode-icon" class="toggle-icon" src="sun.png" alt="Light Mode">  </div>
-
-    <script>
-        function toggleMode() {
-            const body = document.body;
-            const icon = document.getElementById('mode-icon');
-
-            body.classList.toggle('dark-mode');  // Toggle the class
-
-            if (body.classList.contains('dark-mode')) {
-                icon.src = "moon.png"; // Change to moon icon
-                icon.alt = "Dark Mode";
-            } else {
-                icon.src = "sun.png"; // Change to sun icon
-                icon.alt = "Light Mode";
-            }
-        }
-    </script>  
        </script>
 <style>
 .projects-header {
@@ -279,6 +252,14 @@ function moveSlide(step) {
             </div>
             <div class="nav__btns">
               <!-- Theme change button -->
+            <div class="fixed-icons">
+            <div class="icon sun">
+            <svg viewBox="0 0 24 24"><path d="M12 4.5c-.41 0-.75-.34-.75-.75V1.5c0-.41.34-.75.75-.75s.75.34.75.75v2.25c0 .41-.34.75-.75.75zm0 16.5c-.41 0-.75.34-.75.75v2.25c0 .41.34.75.75.75s.75-.34.75-.75V21.75c0-.41-.34-.75-.75-.75zM4.5 12c0-.41-.34-.75-.75-.75H1.5c-.41 0-.75.34-.75.75s.34.75.75.75h2.25c.41 0 .75-.34.75-.75zm16.5 0c0-.41.34-.75.75-.75h2.25c.41 0 .75.34.75.75s-.34.75-.75.75H21.75c-.41 0-.75-.34-.75-.75zM6.22 6.22c-.29-.29-.29-.77 0-1.06l1.59-1.59c.29-.29.77-.29 1.06 0s.29.77 0 1.06L7.28 6.22c-.3.3-.77.3-1.06 0zm12.12 12.12c-.29-.29-.29-.77 0-1.06l1.59-1.59c.29-.29.77-.29 1.06 0s.29.77 0 1.06l-1.59 1.59c-.3.3-.77.3-1.06 0zM6.22 17.78c.29-.29.77-.29 1.06 0l1.59 1.59c.29.29.29.77 0 1.06s-.77.29-1.06 0l-1.59-1.59c-.29-.3-.29-.77 0-1.06zm12.12-12.12c.29-.29.77-.29 1.06 0l1.59 1.59c.29.29.29.77 0 1.06s-.77.29-1.06 0l-1.59-1.59c-.3-.3-.3-.77 0-1.06zM12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z"/></svg>
+            </div>
+            <div class="icon moon">
+            <svg viewBox="0 0 24 24"><path d="M9.37 2.97c.49.11.67.71.31 1.05A8.003 8.003 0 0 0 11.99 20c3.87 0 7.15-2.75 7.88-6.49.08-.43.61-.6.94-.3A9.006 9.006 0 1 1 9.06 2.67c.12-.02.24-.02.31.01z"/></svg>
+            </div>
+            </div>
 
           <div class="nav__toggle" id="nav-toggle">
             <i class="uil uil-apps"></i>
